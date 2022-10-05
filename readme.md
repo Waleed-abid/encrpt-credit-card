@@ -10,3 +10,5 @@ i have used sequelize npm module in order to automate the process of creating da
 The code simply uses some modules major is express which is used to create the server. The main part of the API is encrypting the credit card so let's jump into that.
 
 I have created a folder named "helpers" in that there is a encrypt.js file. It takes a text from the user and encrypts the data. It returns an iv and encrypted data both as an object and both are crucial in order to decrypt the data later. Therefore we will insert both in the database.
+
+I used a very simple algorithm where we use a Buffer and a cipher to encrypt and decrypt the data. We used iv to give us the hex string to encrypt the data(text) which we supplied to the function and it encryoted the text using that cipher, We added both to the database which is not the best approach but we need it to decrypt the data. I have done similar thing in decrypt.js file too.
